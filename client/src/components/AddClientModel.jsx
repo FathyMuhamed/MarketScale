@@ -8,9 +8,6 @@ export default function AddClientModel() {
 	const [email, setEmail] = useState('');
 	const [phone, setPhone] = useState('');
 
-
-
-
 	const [addClient] = useMutation(ADD_CLIENT, {
 		variables: { name, email, phone },
 		update(cache, { data: { addClient } }) {
@@ -22,8 +19,6 @@ export default function AddClientModel() {
 			});
 		},
 	});
-
-
 
 	const handleSubmit = (e) => {
 		e.preventDefault();

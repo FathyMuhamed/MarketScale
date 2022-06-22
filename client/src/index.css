@@ -12,8 +12,13 @@ code {
     monospace;
 }
 
+:root {
+  --c-main: #2c6059;
+  --c-second: #576b99;
+}
+
 .navbar-brand {
-  color: #df3ca6;
+  color: var(--c-main);
 }
 
 .navbar-brand img {
@@ -27,21 +32,21 @@ code {
 
 .btn-primary,
 .bg-primary {
-  background-color: #df3ca6 !important;
+  background-color: var(--c-main) !important;
   border: none;
 }
 
 .btn-primary:hover {
-  background-color: #df3ca6;
+  background-color: var(--c-main);
   opacity: 0.9;
 }
 
 .btn-secondary {
-  background-color: #7430f9;
+  background-color: var(--c-second);
 }
 
 .btn-secondary:hover {
-  background-color: #7430f9;
+  background-color: var(--c-second);
   opacity: 0.9;
 }
 
