@@ -13,12 +13,14 @@ code {
 }
 
 :root {
-  --c-main: #2c6059;
-  --c-second: #576b99;
+  /* --c-main: #2c6059; */
+  --c-main: #dadbe0;
+  --c-second: #454d66;
+  /* --c-second: #576b99; */
 }
 
 .navbar-brand {
-  color: var(--c-main);
+  color: var(--c-second);
 }
 
 .navbar-brand img {
@@ -33,11 +35,13 @@ code {
 .btn-primary,
 .bg-primary {
   background-color: var(--c-main) !important;
+  color: black;
   border: none;
 }
 
 .btn-primary:hover {
   background-color: var(--c-main);
+  color: black;
   opacity: 0.9;
 }
 
