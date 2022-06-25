@@ -1,5 +1,6 @@
 const express = require('express');
 const colors = require('colors');
+const path = require("path");
 const cors = require('cors')
 require('dotenv').config();
 const { graphqlHTTP } = require('express-graphql');
@@ -16,9 +17,18 @@ app.use('/graphql', graphqlHTTP({
   graphiql: process.env.NODE_ENV === 'development'
 }))
 
-app.use(express.static('client/build'));
-app.get('*', (req, res) => {
-  res.sendFile(`${__dirname}/client/build/index.html`);
-})
+app.use(express.static(path.join(__dirname, "./client/build")));
+
+app.get("*", function (_, res) {
+  res.sendFile(
+    path.join(__dirname, "./client/build/index.html"),
+    function (err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+    }
+  );
+});
+
 app.listen(port, console.log(`Server running on Port ${port}`));
 
